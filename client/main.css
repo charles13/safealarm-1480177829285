@@ -152,7 +152,7 @@ tr.done td:nth-child(2) {
 
 .todo-list {
   padding: 50px 20px;
-    width: 450px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -175,7 +175,7 @@ tr.done td:nth-child(2) {
 }
 
 #ItemsList tr td:nth-child(4) {
-    min-width: 30px;
+    min-width: 300px;
 }
 
 #ItemsList td {

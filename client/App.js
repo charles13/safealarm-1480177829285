@@ -59,7 +59,8 @@
 				var $saveButton = $("<td>").text("save").attr("class", "link save tc").click(onSaveExistingItemButtonClicked);
 				var $deleteButton = $("<td>").text("delete").attr("class", "link delete tc").click(onDeleteButtonClicked);
 
-				$tr.append($doneBox).append($text).append($editButton).append($saveButton).append($deleteButton);
+//				$tr.append($doneBox).append($text).append($editButton).append($saveButton).append($deleteButton);
+				$tr.append($doneBox).append($text).append($deleteButton);
 				todos.push($tr);
 			});
 
