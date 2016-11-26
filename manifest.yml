@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: safealarm
+  host: safealarm
+  disk_quota: 1024M
+  services:
+  - safealarm-AdvancedMobileAccess
+  - safealarm-imfpush
+  - safealarm-cloudantNoSQLDB
