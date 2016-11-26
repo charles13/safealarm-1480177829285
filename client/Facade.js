@@ -12,18 +12,17 @@
       return $.get(API_URL + "/" + itemId);
     }
 
-    /*function addNewItem(text, urgency){
+    function addNewItem(text,personalNum,name,contact,contactNum,coordination_long,coordination_lat){
       var item = {
         "text": text,
-        "urgency": urgency,
-        "isDone": false
-      }*/
-    function addNewItem(text){
-      var item = {
-        "text": text,
-        "isDone": false
+        "isDone": false,
+        "personalNum": personalNum,
+        "name": name,
+        "contact": contact,
+        "contactNum":contactNum,
+        "coortination_long": coordination_long,
+        "coordination_lat": coordination_lat
       }
-
       return $.ajax( {
         url:API_URL,
         method: "POST",
@@ -32,14 +31,15 @@
       });
     }
 
-    /*function updateItem(id, text, urgency){
+    function updateItem(text,personalNum,name,contact,contactNum,coordination_long,coordination_lat){
       var item = {
         "text": text,
-        "urgency": urgency
-      }*/
-    function updateItem(id, text){
-      var item = {
-        "text": text
+        "personalNum": personalNum,
+        "name": name,
+        "contact": contact,
+        "contactNum":contactNum,
+        "coortination_long": coordination_long,
+        "coordination_lat": coordination_lat
       }
 
       return $.ajax( {
@@ -49,7 +49,6 @@
         data: JSON.stringify(item)
       });
     }
-
     function markItemDone(id, state){
       var item = {
         "isDone": state
@@ -61,7 +60,7 @@
         contentType: "application/json",
         data: JSON.stringify(item)
       });
-    }
+    } 
 
     function deleteItem(id){
       return $.ajax( {

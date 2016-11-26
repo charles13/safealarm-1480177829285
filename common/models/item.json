@@ -12,9 +12,34 @@
       "required": true
     },
     "isDone": {
-      "type": "boolean",
-      "required": true
-    }
+    "type": "boolean",
+    "required": true
+    },
+    
+    "personalNum" :{
+	"type": "string",
+	"required":false
+	},
+	"name":{
+	"type": "string",
+	"required":false
+	},
+	"contact":{
+	"type": "string",
+	"required": false
+	},
+	"contactNum": {
+	"types": "string",
+	"required": false
+	},
+	"coordination_long":{
+	"types":"string",
+	"required": false
+	},
+	"coordination_lat":{
+	"type":"string",
+	"required":false
+	}
   },
   "validations": [],
   "relations": {},

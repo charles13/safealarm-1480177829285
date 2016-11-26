@@ -3,9 +3,9 @@
 	function App() {
 
 		var $infoBox = $("#InfoBox");
-    var $editItemInterface = $("#EditItemInterface");
+   		var $editItemInterface = $("#EditItemInterface");
 		var $saveNewItemButton = $("#SaveNewItemButton");
-    var $saveExistingItemButton = $("#SaveExistingItemButton");
+   		var $saveExistingItemButton = $("#SaveExistingItemButton");
 		var $itemsList = $("#ItemsList");
 		var $itemText = $("#ItemText");
 		var $idBeingEdited = "";
@@ -13,8 +13,8 @@
 		var $refreshBtn = $("#refresh");
 
 		$refreshBtn.click(onRefreshClick);
-    $saveNewItemButton.click(onSaveNewItemButtonClicked);
-    $saveExistingItemButton.click(onSaveExistingItemButtonClicked);
+  		$saveNewItemButton.click(onSaveNewItemButtonClicked);
+    	$saveExistingItemButton.click(onSaveExistingItemButtonClicked);
 
 		function init() {
 			$infoBox.children("#init").show();
@@ -55,12 +55,25 @@
 				}
 
 				var $text = $("<td>").text(item.text);
-				var $editButton = $("<td>").text("edit").attr("class", "link edit tc").click(onEditButtonClicked);
-				var $saveButton = $("<td>").text("save").attr("class", "link save tc").click(onSaveExistingItemButtonClicked);
+				var $number = $("<td>").text("Personal Number"); 
+				var $name = $("<td>").text("Patient Name");
+				var $contactname = $("<td>").text("Contact Name");
+				var $contactnumber =$("<td>").text("Contact Number");
+				var $coord_long = $("<td>").text("Coord Long");
+				var $coord_lat = $("<td>").text("Coord Lat");
+
+				//// TO FIX
+				//var $number = $("<td>").text(item.personalNum); 
+				//var $name = $("<td>").text(item.name);
+				//var $contactname = $("<td>").text(item.contact);
+				//var $contactnumber =$("<td>").text(item.contactNum);
+				//var $coord_long = $("<td>").text(item.coordination_long);
+				//var $coord_lat = $("<td>").text(item.coordination_lat);
+					
 				var $deleteButton = $("<td>").text("delete").attr("class", "link delete tc").click(onDeleteButtonClicked);
 
-//				$tr.append($doneBox).append($text).append($editButton).append($saveButton).append($deleteButton);
-				$tr.append($doneBox).append($text).append($deleteButton);
+				$tr.append($doneBox).append($text).append($number).append($name).append($contactname).append($contactnumber).append($coord_long).append($coord_lat).append($deleteButton);
+				//$tr.append($doneBox).append($text).append($contactname).append($deleteButton);
 				todos.push($tr);
 			});
 
