@@ -54,7 +54,7 @@
 				}
 
 				var $text = $("<td>").text(item.text);
-				var $number = $("<td>").text("Personal Number"); 
+				var $number = $("<td>").text(item.personalNum); 
 				var $name = $("<td>").text("Patient Name");
 				var $contactname = $("<td>").text("Contact Name");
 				var $contactnumber =$("<td>").text("Contact Number");
@@ -62,7 +62,7 @@
 				var $coord_lat = $("<td>").text("Coord Lat");
 
 				//// TO FIX
-				//var $number = $("<td>").text(item.personalNum); 
+				 
 				//var $name = $("<td>").text(item.name);
 				//var $contactname = $("<td>").text(item.contact);
 				//var $contactnumber =$("<td>").text(item.contactNum);
