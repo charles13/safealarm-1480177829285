@@ -9,11 +9,11 @@ body {
     margin: 40px;
     line-height: 1.3em;
     color: #555;
-    background-color: rgb(0, 113, 150);
+    background-color: rgb(252, 251, 227);
 }
 header {
     width: 750px;
-  color:white;
+  color:black;
 }
 h1 {
     font-size: 39px;
@@ -321,11 +321,10 @@ img + a {
   height:60px;	
   display: block;
   margin: 0 auto;
-  filter: brightness(0%) invert(1);
 }
 h2{
   font-size: 15px;
   font-weight: normal;
-  color:rgb(235, 231, 241);
+  color:black;
 }
 

@@ -12,16 +12,18 @@
       return $.get(API_URL + "/" + itemId);
     }
 
-    function addNewItem(text,personalNum,name,contact,contactNum,coordination_long,coordination_lat){
+    function addNewItem(emergency,personalNum,name,contact,contactNum,coordination_long,coordination_lat,location,time){
       var item = {
-        "text": text,
+        "emergency": emergency,
         "isDone": false,
         "personalNum": personalNum,
         "name": name,
         "contact": contact,
         "contactNum":contactNum,
         "coortination_long": coordination_long,
-        "coordination_lat": coordination_lat
+        "coordination_lat": coordination_lat,
+        "location":location,
+        "time":time,
       }
       return $.ajax( {
         url:API_URL,
@@ -31,7 +33,7 @@
       });
     }
 
-    function updateItem(text,personalNum,name,contact,contactNum,coordination_long,coordination_lat){
+    function updateItem(text,personalNum,name,contact,contactNum,coordination_long,coordination_lat,location,time){
       var item = {
         "text": text,
         "personalNum": personalNum,
@@ -39,7 +41,9 @@
         "contact": contact,
         "contactNum":contactNum,
         "coortination_long": coordination_long,
-        "coordination_lat": coordination_lat
+        "coordination_lat": coordination_lat,
+        "location":location,
+        "time":time,
       }
 
       return $.ajax( {

@@ -7,7 +7,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "text": {
+    "emergency": {
       "type": "string",
       "required": true
     },
@@ -38,7 +38,20 @@
 	"coordination_lat":{
 	"type":"string",
 	"required":false
+	},
+	
+	"location":{
+	"type":"string",
+	"required":false
+	},
+	"time":{
+	"type":"string",
+	"required":false
 	}
+	
+	
+	
+	
   },
   "validations": [],
   "relations": {},

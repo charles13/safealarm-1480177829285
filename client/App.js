@@ -53,13 +53,16 @@
 					})).click(onDoneButtonClicked);
 				}
 
-				var $text = $("<td>").text(item.text);
+				var $text = $("<td>").text(item.emergency);
 				var $number = $("<td>").text(item.personalNum); 
 				var $Pname = $("<td>").text(item.name);
 				var $Pcontactname = $("<td>").text(item.contact);
 				var $Pcontactnumber =$("<td>").text(item.contactNum);
 				var $Pcoord_long = $("<td>").text(item.coordination_long);
 				var $Pcoord_lat = $("<td>").text(item.coordination_lat);
+				
+				var $Plocation = $("<td>").text(item.location);
+				var $Ptime = $("<td>").text(item.time);
 
 				//// TO FIX
 				 
@@ -69,14 +72,19 @@
 				//var $coord_long = $("<td>").text(item.coordination_long);
 				//var $coord_lat = $("<td>").text(item.coordination_lat);
 				
-				var x3 = new Date();
-				var res = String(x3);
-				var nueva = res.substring(0,25);
-				var timestamp = $("<td>").text(nueva);
+				//var x3 = new Date();
+				//var res = String(x3);
+				//var nueva = res.substring(0,25);
+				//var timestamp = $("<td>").text(nueva);
+				function onDeleteButtonClicked(){
+					var a = String("http://maps.google.com/?q=")+String($Pcoord_long)+String(",")+String($Pcoord_lat);
+					window.open(a);			
+				}
+				
 					
-				var $deleteButton = $("<td>").text("delete").attr("class", "link delete tc").click(onDeleteButtonClicked);
+				var $deleteButton = $("<td>").text("Go to Maps").attr("class", "link delete tc").click(onDeleteButtonClicked);
 
-				$tr.append(nueva).append($text).append($number).append($Pname).append($Pcontactname).append($Pcontactnumber).append($Pcoord_long).append($Pcoord_lat).append($deleteButton);
+				$tr.append($Ptime).append($text).append($number).append($Pname).append($Pcontactname).append($Pcontactnumber).append($Plocation).append($Pcoord_long).append($Pcoord_lat).append($deleteButton);
 				//$tr.append($doneBox).append($text).append($contactname).append($deleteButton);
 				todos.push($tr);
 			});
@@ -126,16 +134,23 @@
 			Facade.markItemDone(item.id, !item.isDone).then(refreshItemsList);
 		}
 
-		function onDeleteButtonClicked() {
-			var itemId = $(this).parent().attr("itemId");
+		//function onDeleteButtonClicked() {
+			//$.each(items, function (idx, item) {
+				//var $Pcoord_long = $("<td>").text(item.coordination_long);
+				//var $Pcoord_lat = $("<td>").text(item.coordination_lat);
+				//var a = String("http://maps.google.com/?q=")+String($item.coordi)+String(",")+String($Pcoord_lat);
+				//window.open(a);
+			
+			//var itemId = $(this).parent().attr("itemId");
+			
 
-			$infoBox.children().removeClass('active');
-			$infoBox.children("#deleteButtonClicked").addClass('active');
-			Facade.deleteItem(itemId).then(refreshItemsList).fail(function (err) {
-				alert("DELETE FAILED");
-			});
+			//$infoBox.children().removeClass('active');
+			//$infoBox.children("#deleteButtonClicked").addClass('active');
+			//Facade.deleteItem(itemId).then(refreshItemsList).fail(function (err) {
+			//	alert("DELETE FAILED");
+			//});
 			//}
-		}
+		//}
 
 		function onSaveNewItemButtonClicked() {
       var itemText = $itemText.val();
