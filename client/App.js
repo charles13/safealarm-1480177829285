@@ -55,11 +55,11 @@
 
 				var $text = $("<td>").text(item.text);
 				var $number = $("<td>").text(item.personalNum); 
-				var $name = $("<td>").text("Patient Name");
-				var $contactname = $("<td>").text("Contact Name");
-				var $contactnumber =$("<td>").text("Contact Number");
-				var $coord_long = $("<td>").text("Coord Long");
-				var $coord_lat = $("<td>").text("Coord Lat");
+				var $Pname = $("<td>").text(item.name);
+				var $Pcontactname = $("<td>").text(item.contact);
+				var $Pcontactnumber =$("<td>").text(item.contactNum);
+				var $Pcoord_long = $("<td>").text(item.coordination_long);
+				var $Pcoord_lat = $("<td>").text(item.coordination_lat);
 
 				//// TO FIX
 				 
@@ -76,7 +76,7 @@
 					
 				var $deleteButton = $("<td>").text("delete").attr("class", "link delete tc").click(onDeleteButtonClicked);
 
-				$tr.append(nueva).append($text).append($number).append($name).append($contactname).append($contactnumber).append($coord_long).append($coord_lat).append($deleteButton);
+				$tr.append(nueva).append($text).append($number).append($Pname).append($Pcontactname).append($Pcontactnumber).append($Pcoord_long).append($Pcoord_lat).append($deleteButton);
 				//$tr.append($doneBox).append($text).append($contactname).append($deleteButton);
 				todos.push($tr);
 			});

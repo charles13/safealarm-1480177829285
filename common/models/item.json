@@ -28,11 +28,11 @@
 	"required": false
 	},
 	"contactNum": {
-	"types": "string",
+	"type": "string",
 	"required": false
 	},
 	"coordination_long":{
-	"types":"string",
+	"type":"string",
 	"required": false
 	},
 	"coordination_lat":{
