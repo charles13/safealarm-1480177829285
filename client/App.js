@@ -1,3 +1,4 @@
+/*eslint-env browser */
 (function () {
 
 	function App() {
@@ -15,6 +16,9 @@
 		$refreshBtn.click(onRefreshClick);
   		$saveNewItemButton.click(onSaveNewItemButtonClicked);
     	$saveExistingItemButton.click(onSaveExistingItemButtonClicked);
+    	window.setInterval(function(){
+    		onRefreshClick()
+    		}, 1000);
 
 		function init() {
 			$infoBox.children("#init").show();
@@ -26,10 +30,10 @@
 		}
 
 		function onRefreshClick(){
-			$itemsList.css("opacity", "0");
+			//$itemsList.css("opacity", "0");
 			refreshItemsList();
 			setTimeout(function(){
-				$itemsList.css("opacity", "1");
+				//$itemsList.css("opacity", "1");
 			}, 250);
 		}
 
@@ -69,10 +73,15 @@
 				//var $contactnumber =$("<td>").text(item.contactNum);
 				//var $coord_long = $("<td>").text(item.coordination_long);
 				//var $coord_lat = $("<td>").text(item.coordination_lat);
+				
+				var x3 = new Date();
+				var res = String(x3);
+				var nueva = res.substring(0,25);
+				var $timestamp = $("<td>").text(nueva);
 					
 				var $deleteButton = $("<td>").text("delete").attr("class", "link delete tc").click(onDeleteButtonClicked);
 
-				$tr.append($doneBox).append($text).append($number).append($name).append($contactname).append($contactnumber).append($coord_long).append($coord_lat).append($deleteButton);
+				$tr.append($timestamp).append($text).append($number).append($name).append($contactname).append($contactnumber).append($coord_long).append($coord_lat).append($deleteButton);
 				//$tr.append($doneBox).append($text).append($contactname).append($deleteButton);
 				todos.push($tr);
 			});

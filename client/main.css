@@ -1,14 +1,20 @@
 * {
     box-sizing: border-box;
 }
-
+head {
+	color:white;	
+}
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin: 40px;
     line-height: 1.3em;
     color: #555;
+    background-color: rgb(0, 113, 150);
 }
-
+header {
+    width: 750px;
+  color:white;
+}
 h1 {
     font-size: 39px;
     font-weight: normal;
@@ -91,7 +97,6 @@ header {
 }
 
 .container {
-    border: 1px solid #eee;
     display: table;
     width: 100%;
     margin-top: 2rem;
@@ -151,9 +156,9 @@ tr.done td:nth-child(2) {
 }
 
 .todo-list {
-  padding: 50px 20px;
     width: 100%;
     margin: 0 auto;
+    background-color: rgb(235, 231, 241)
 }
 
 #ItemsList {
@@ -304,3 +309,23 @@ img + a {
     color: #5596E6;
     cursor: pointer;
 }
+
+#footer{
+	size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#im{
+  width:60px;
+  height:60px;	
+  display: block;
+  margin: 0 auto;
+  filter: brightness(0%) invert(1);
+}
+h2{
+  font-size: 15px;
+  font-weight: normal;
+  color:rgb(235, 231, 241);
+}
+
