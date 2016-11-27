@@ -16,19 +16,17 @@
 		$refreshBtn.click(onRefreshClick);
   		$saveNewItemButton.click(onSaveNewItemButtonClicked);
     	$saveExistingItemButton.click(onSaveExistingItemButtonClicked);
-    	window.setInterval(function(){
+    	window.setInterval(function(){  		
     		onRefreshClick()
     		}, 1000);
 
 		function init() {
 			$infoBox.children("#init").show();
 			refreshItemsList();
-
 			$("#new-todo").submit(function (e) {
 				return false;
 			});
 		}
-
 		function onRefreshClick(){
 			//$itemsList.css("opacity", "0");
 			refreshItemsList();
@@ -36,14 +34,11 @@
 				//$itemsList.css("opacity", "1");
 			}, 250);
 		}
-
 		function refreshItemsList() {
 			Facade.getAllItems().then(populateItemsList);
 		}
-
 		function populateItemsList(items) {
 			$itemsList.empty();
-
 			var todos = [];
 
 			$.each(items, function (idx, item) {
@@ -77,11 +72,11 @@
 				var x3 = new Date();
 				var res = String(x3);
 				var nueva = res.substring(0,25);
-				var $timestamp = $("<td>").text(nueva);
+				var timestamp = $("<td>").text(nueva);
 					
 				var $deleteButton = $("<td>").text("delete").attr("class", "link delete tc").click(onDeleteButtonClicked);
 
-				$tr.append($timestamp).append($text).append($number).append($name).append($contactname).append($contactnumber).append($coord_long).append($coord_lat).append($deleteButton);
+				$tr.append(nueva).append($text).append($number).append($name).append($contactname).append($contactnumber).append($coord_long).append($coord_lat).append($deleteButton);
 				//$tr.append($doneBox).append($text).append($contactname).append($deleteButton);
 				todos.push($tr);
 			});
